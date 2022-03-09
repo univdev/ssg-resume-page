@@ -1,9 +1,11 @@
-<script>
-	
-</script>
-
-<style>
+<style lang="less">
 
 </style>
 
-<div class="resume"></div>
+<template lang="pug">
+  .resume
+</template>
+
+<script>
+	
+</script>
