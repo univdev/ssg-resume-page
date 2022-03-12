@@ -36,13 +36,17 @@
       .title Commit Count
       .content
         NumberViewer(
-          number="1024")
+          number="768")
     .count-card__item
       .title Commit Count
-      .content 1,024
+      .content
+        NumberViewer(
+            number="768")
     .count-card__item
       .title Commit Count
-      .content 1,024
+      .content
+        NumberViewer(
+            number="768")
 </template>
 
 <script lang="ts">
