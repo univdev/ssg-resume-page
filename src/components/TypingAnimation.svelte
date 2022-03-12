@@ -60,6 +60,7 @@
     if (index < 0) index = list.length - 1;
     const item = list[index] || '';
     const itemLength = item.length;
+    if (itemLength <= 0) return;
     interval = window.setInterval(() => {
       const textLength = displayText.length;
       if (textLength == itemLength) {

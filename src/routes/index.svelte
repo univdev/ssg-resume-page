@@ -9,16 +9,26 @@
 </svelte:head>
 
 <template lang="pug">
-  MainSection
+  MainSection(descriptions="{descriptions}")
   AboutSection
 </template>
 
-<script>
+<script lang="ts" context="module">
+  export async function preload() {
+    const response = await this.fetch('/descriptions');
+    const descriptions = await response.json();
+    return { descriptions };
+  }
+</script>
+
+<script lang="ts">
   import { onMount } from 'svelte';
   import Document from '../stores/document';
   import MainSection from './.components/MainSection.svelte';
   import AboutSection from './.components/AboutSection.svelte';
 	import CountCard from './.components/CountCard.svelte';
+
+  export let descriptions: Array<string>;
 
   let currentDocument = null;
 
