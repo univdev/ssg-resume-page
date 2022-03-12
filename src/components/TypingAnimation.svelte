@@ -32,72 +32,72 @@
 
 <template>
   <div class="typing-animation">
-    {#if displayText.length === 0}
+    {#if text.length === 0}
       <span class="character"></span>
     {/if}
-    {#each displayText as character}
+    {#each text as character}
       <span class="character">{character}</span>
     {/each}
   </div>
 </template>
 
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { onMount } from 'svelte';
 
   export let items: Array<string> = [];
 
-  const stepDelay: number = 100;
-  const eraseDelay: number = 3000;
-  const nextWordsDelay: number = 1000;
-  let index: number = 0;
-  let displayText: Array<string> = [];
-  let isMounted: boolean = false;
-  let interval: number = null;
+  const stepDelay = 80;
+  const nextTextDelay = 1000;
+  const eraseDelay = 3500;
   
-  const startWriteAnimation = (list: Array<string>, isClient: boolean) => {
-    if (!isClient) return;
-    if (index >= list.length) index = 0;
-    if (index < 0) index = list.length - 1;
-    const item = list[index] || '';
-    const itemLength = item.length;
-    if (itemLength <= 0) return;
-    interval = window.setInterval(() => {
-      const textLength = displayText.length;
-      if (textLength == itemLength) {
-        window.clearInterval(interval);
-        interval = window.setTimeout(() => {
-          startEraseAnimation(items);
-        }, eraseDelay);
-        return;
-      }
-      const currentWord = item[textLength] || null;
-      displayText = [...displayText, currentWord];
-    }, stepDelay);
-  };
-  const startEraseAnimation = (list: Array<string>) => {
-    interval = window.setInterval(() => {
-      const textLength = displayText.length;
-      if (textLength <= 0) {
-        window.clearInterval(interval);
-        interval = window.setTimeout(() => {
-          index += 1;
-          startWriteAnimation(list, isMounted);
-        }, nextWordsDelay);
-        return;
-      }
-      const result = [...displayText];
-      result.splice(displayText.length - 1, 1);
-      displayText = result;
-    }, stepDelay);
-  };
+  let text = [];
+  let currentTextIndex = 0;
+  let isMounted = false;
+  let direction = true;
 
+  const appendCharacterToText = (index) => {
+    const currentText = items[currentTextIndex];
+    if (!currentText) return false;
+    const character = currentText[index];
+    if (!character) return false;
+    text = [...text, character];
+    return true;
+  };
+  const popCharacterFromText = (index) => {
+    if (text.length <= 0) return false;
+    text.splice(index, 1);
+    text = text;
+    return true;
+  };
+  const startAnimation = (d, isMounted) => {
+    if (!isMounted) return;
+    if (currentTextIndex >= items.length) currentTextIndex = 0;
+    if (currentTextIndex < 0) currentTextIndex = items.length - 1;
+    if (d) {
+      const interval = window.setInterval(() => {
+        if (!appendCharacterToText(text.length)) {
+          clearInterval(interval);
+          window.setTimeout(() => {
+            direction = false;
+          }, eraseDelay);
+        }
+      }, stepDelay);
+    }
+    if (!d) {
+      const interval = window.setInterval(() => {
+        if (!popCharacterFromText(text.length - 1)) {
+          clearInterval(interval);
+          window.setTimeout(() => {
+            currentTextIndex += 1;
+            direction = true;
+          }, nextTextDelay);
+        }
+      }, stepDelay);
+    }
+  };
   onMount(() => {
     isMounted = true;
-    return () => {
-      window.clearTimeout(interval);
-      window.clearInterval(interval);
-    };
   });
 
-  $: startWriteAnimation(items, isMounted);
+  $: startAnimation(direction, isMounted);
 </script>
