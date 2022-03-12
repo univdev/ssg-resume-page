@@ -54,6 +54,7 @@
   let currentTextIndex = 0;
   let isMounted = false;
   let direction = true;
+  let interval = null;
 
   const appendCharacterToText = (index) => {
     const currentText = items[currentTextIndex];
@@ -74,7 +75,7 @@
     if (currentTextIndex >= items.length) currentTextIndex = 0;
     if (currentTextIndex < 0) currentTextIndex = items.length - 1;
     if (d) {
-      const interval = window.setInterval(() => {
+      interval = window.setInterval(() => {
         if (!appendCharacterToText(text.length)) {
           clearInterval(interval);
           window.setTimeout(() => {
@@ -84,7 +85,7 @@
       }, stepDelay);
     }
     if (!d) {
-      const interval = window.setInterval(() => {
+      interval = window.setInterval(() => {
         if (!popCharacterFromText(text.length - 1)) {
           clearInterval(interval);
           window.setTimeout(() => {
@@ -97,6 +98,9 @@
   };
   onMount(() => {
     isMounted = true;
+    return () => {
+      window.clearInterval(interval);
+    };
   });
 
   $: startAnimation(direction, isMounted);
