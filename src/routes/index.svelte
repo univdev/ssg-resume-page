@@ -14,7 +14,27 @@
 </template>
 
 <script>
+  import { onMount } from 'svelte';
+  import Document from '../stores/document';
   import MainSection from './.components/MainSection.svelte';
   import AboutSection from './.components/AboutSection.svelte';
 	import CountCard from './.components/CountCard.svelte';
+
+  let currentDocument = null;
+
+  const documentSubscriber = Document.subscribe((d) => {
+    currentDocument = d;
+  });
+
+  onMount(() => {
+    const scrollEvent = window.addEventListener('scroll', () => {
+      const { scrollY } = window;
+      if (scrollY <= 80 && !currentDocument.isTop) Document.update((current) => ({ ...current, isTop: true }));
+      if (scrollY > 80 && currentDocument.isTop) Document.update((current) => ({ ...current, isTop: false }));
+    });
+    return () => {
+      window.clearInterval(scrollEvent);
+      documentSubscriber();
+    };
+  });
 </script>
