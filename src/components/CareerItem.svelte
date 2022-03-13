@@ -74,6 +74,16 @@
       <div class="date">{startDate} ~ {endDate}</div>
     {/if}
     <div class="role">{role}</div>
+    {#each histories as history}
+      <ul class="histories">
+        <li class="histories__item histories__item--title">
+          {@html history.title}
+        </li>
+        {#each history.content as content}
+          <li class="histories__item">{@html content}</li>
+        {/each}
+      </ul>
+    {/each}
     <ul class="histories">
       <li class="histories__item histories__item--title">
         개발 및 프로젝트 총괄
@@ -98,22 +108,26 @@
       <li class="histories__item histories__item--title">
         사내 교육 및 컨퍼런스
       </li>
-      <li class="histories__item">신입 프론트엔드 개발자 분들과의 멘토링 진행</li>
-      <li class="histories__item">사내 컨퍼런스 ''에서 다수의 기술 프레젠테이션 진행</li>
+      <li class="histories__item">신입 프론트엔드 개발자 분들과의 멘토링 진행 (개발 주도 / 코드 리뷰)</li>
+      <li class="histories__item">사내 컨퍼런스 '렛츠기릿'에서 다수의 기술 프레젠테이션 진행</li>
       <li class="histories__item">고객과의 화상 미팅을 통해 다수의 프로젝트 기획 직접 참여</li>
-      <li class="histories__item">LG상사 '그린긱' 서비스 총괄</li>
-      <li class="histories__item">현대이노션 '눈금' 백오피스 개발</li>
-      <li class="histories__item">국민은행 순회 점검 관리 시스템 설계 및 개발</li>
-      <li class="histories__item">위 프로젝트 외 30여개 프로젝트에 대한 개발 및 관리 진행</li>
+      <li class="histories__item">동료 개발자의 코드 리뷰 다수</li>
     </ul>
   </div>
 </div>
 
 <script lang="ts">
+  type History = {
+    title: String,
+    content: Array<string>,
+  };
+  type Histories = Array<History>;
+
   export let image: string = '';
   export let name: string = '';
   export let role: string = '';
   export let logoBackgroundColor: string = '#FFF';
   export let startDate: string;
   export let endDate: string;
+  export let histories: Histories = [];
 </script>

@@ -10,12 +10,15 @@
       font-family: "Black Han Sans";
       margin-bottom: 48px;
     }
-    .content {
+    .career-item-container {
       display: flex;
-      justify-content: center;
-    }
-    :global(.career-item) {
-      margin: auto;
+      align-items: center;
+      & + .career-item-container {
+        margin-top: 48px;
+      }
+      :global(.career-item) {
+        margin: auto;
+      }
     }
   }
 </style>
@@ -28,7 +31,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="content col-md-12">
+      <div class="career-item-container col-md-12">
         <CareerItem
           class="career-item"
           name="스타셸 스튜디오"
@@ -37,6 +40,16 @@
           role="프론트엔드 엔지니어 / 엔지니어링 매니저"
           image="{StarshellLogo}"
           logoBackgroundColor="#000"/>
+      </div>
+      <div class="career-item-container col-md-12">
+        <CareerItem
+          class="career-item"
+          name="단감소프트"
+          startDate="2021-08-09"
+          endDate="현재"
+          role="프론트엔드 엔지니어 / 산업기능요원 병역특례"
+          image="{StarshellLogo}"
+          logoBackgroundColor="#FFF"/>
       </div>
     </div>
   </div>

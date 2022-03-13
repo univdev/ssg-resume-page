@@ -6,11 +6,6 @@
       font-size: 64px;
       margin-bottom: 18px;
     }
-    .content {
-      margin-top: 8px;
-      font-size: 32px;
-      font-family: 'Courier New', Courier, monospace;
-    }
   }
 </style>
 
