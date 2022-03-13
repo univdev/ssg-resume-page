@@ -15,6 +15,8 @@
 <template lang="pug">
   MainSection(descriptions="{descriptions}")
   AboutSection
+  SkillsSection
+  CareerSection
 </template>
 
 <script lang="ts" context="module">
@@ -30,6 +32,8 @@
   import Document from '../stores/document';
   import MainSection from './.components/MainSection.svelte';
   import AboutSection from './.components/AboutSection.svelte';
+  import SkillsSection from './.components/SkillsSection.svelte';
+  import CareerSection from './.components/CareerSection.svelte';
 	import CountCard from './.components/CountCard.svelte';
 
   export let descriptions: Array<string>;
@@ -40,7 +44,13 @@
     currentDocument = d;
   });
 
-  onMount(() => {
+  const getApp = async () => {
+    const fb = await import('firebase/app');
+    const app = fb.getApp();
+  };
+
+  onMount(async () => {
+    await getApp();
     const scrollEvent = window.addEventListener('scroll', () => {
       const { scrollY } = window;
       if (scrollY <= 80 && !currentDocument.isTop) Document.update((current) => ({ ...current, isTop: true }));

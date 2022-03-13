@@ -3,11 +3,12 @@
     width: 100%;
     text-align: center;
     .icon {
-      font-size: 48px;
+      font-size: 64px;
       margin-bottom: 18px;
     }
     .content {
-      font-size: 28px;
+      margin-top: 8px;
+      font-size: 32px;
       font-family: 'Courier New', Courier, monospace;
     }
   }

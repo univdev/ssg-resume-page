@@ -43,22 +43,20 @@
     .row
       .count-card__item.col-lg-4.col-md-12
         .card-container
-          .title Commit Count
-          .content
-            NumberViewer(
-              number="768")
+          .title Github Rank
+          .content A+
       .count-card__item.col-lg-4.col-md-12
         .card-container
-            .title Commit Count
+            .title Commits
             .content
               NumberViewer(
-                number="768")
+                number="524")
       .count-card__item.col-lg-4.col-md-12
         .card-container
-            .title Commit Count
+            .title Stars
             .content
               NumberViewer(
-                number="768")
+                number="50")
 </template>
 
 <script lang="ts">
