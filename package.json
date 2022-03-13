@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "univdev_resume",
+  "description": "프론트엔드 개발자, 박찬영입니다.",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
