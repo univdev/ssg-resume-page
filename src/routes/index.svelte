@@ -12,8 +12,8 @@
 <template lang="pug">
   MainSection(descriptions="{descriptions}")
   AboutSection
-  ContactSection
   SkillsSection
+  ContactSection
   CareerSection
 </template>
 

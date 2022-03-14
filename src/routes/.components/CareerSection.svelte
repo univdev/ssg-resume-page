@@ -37,7 +37,7 @@
           name="스타셸 스튜디오"
           startDate="2018-09-15"
           endDate="2021-07-16 (+ 프리랜서 4개월)"
-          role="프론트엔드 엔지니어 / 엔지니어링 매니저"
+          role="엔지니어링 매니저 / 프론트엔드 엔지니어"
           image="{StarshellLogo}"
           logoBackgroundColor="#000"/>
       </div>
