@@ -26,7 +26,7 @@
       <div class="col-lg-4">
         <SkillsCard
           title="Front End">
-          <!-- <FrontEndSkillsCard /> -->
+          <FrontEndSkillsCard />
         </SkillsCard>
       </div>
       <div class="col-lg-4">
@@ -42,6 +42,6 @@
 </div>
 
 <script lang="ts">
-  // import FrontEndSkillsCard from './FrontEndSkillsCard.svelte';
+  import FrontEndSkillsCard from './FrontEndSkillsCard.svelte';
   import SkillsCard from '../../components/SkillsCard.svelte';
 </script>

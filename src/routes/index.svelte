@@ -13,8 +13,8 @@
   MainSection(descriptions="{descriptions}")
   AboutSection
   SkillsSection
-  ContactSection
   CareerSection
+  ContactSection
 </template>
 
 <script lang="ts" context="module">
