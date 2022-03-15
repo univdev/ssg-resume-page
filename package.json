@@ -17,7 +17,8 @@
     "matter-js": "^0.18.0",
     "polka": "next",
     "pug": "^3.0.2",
-    "sirv": "^1.0.0"
+    "sirv": "^1.0.0",
+    "svelte-resize-observer": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
