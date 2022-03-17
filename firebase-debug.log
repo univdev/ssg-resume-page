@@ -1,0 +1,261 @@
+[debug] [2022-03-17T14:16:10.126Z] ----------------------------------------------------------------------
+[debug] [2022-03-17T14:16:10.128Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start --only functions
+[debug] [2022-03-17T14:16:10.128Z] CLI Version:   10.3.1
+[debug] [2022-03-17T14:16:10.128Z] Platform:      darwin
+[debug] [2022-03-17T14:16:10.129Z] Node Version:  v16.14.1
+[debug] [2022-03-17T14:16:10.131Z] Time:          Thu Mar 17 2022 23:16:10 GMT+0900 (대한민국 표준시)
+[debug] [2022-03-17T14:16:10.131Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-03-17T14:16:10.224Z] Object ".functions" in "firebase.json" has unknown property: {"additionalProperty":"functions"}
+[debug] [2022-03-17T14:16:10.229Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-03-17T14:16:10.230Z] > authorizing via signed-in user (rhdwkrxla68@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2022-03-17T14:16:10.263Z] [hub] writing locator at /var/folders/54/l6mm9hc14tjdm542v5hqg2180000gn/T/hub-univdev-resume.json
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-03-17T14:16:10.294Z] defaultcredentials: writing to file /Users/cyp/.config/firebase/rhdwkrxla68_gmail_com_application_default_credentials.json
+[debug] [2022-03-17T14:16:10.297Z] Setting GAC to /Users/cyp/.config/firebase/rhdwkrxla68_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/cyp/.config/firebase/rhdwkrxla68_gmail_com_application_default_credentials.json"}}
+[debug] [2022-03-17T14:16:10.301Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/univdev-resume/adminSdkConfig [none]
+[debug] [2022-03-17T14:16:10.747Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/univdev-resume/adminSdkConfig 200
+[debug] [2022-03-17T14:16:10.749Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/univdev-resume/adminSdkConfig {"projectId":"univdev-resume","storageBucket":"univdev-resume.appspot.com","locationId":"asia-east2"}
+[debug] [2022-03-17T14:16:10.820Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-03-17T14:16:10.821Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-03-17T14:16:10.822Z] Starting Emulator UI with command {"binary":"node","args":["/Users/cyp/.cache/firebase/emulators/ui-v1.6.5/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/cyp/.cache/firebase/emulators/ui-v1.6.5/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-03-17T14:16:10.924Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] i  functions: Watching "/Users/cyp/projects/ssg-resume-page/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/cyp/projects/ssg-resume-page/functions\" for Cloud Functions..."}}
+[debug] [2022-03-17T14:16:11.103Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-03-17T14:16:12.464Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "npm run lint && tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "src/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-17T14:16:12.465Z] Building nodejs source
+[debug] [2022-03-17T14:16:12.465Z] Analyzing nodejs backend spec
+[info] ✔  functions[us-central1-api]: http function initialized (http://localhost:5001/univdev-resume/us-central1/api). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/univdev-resume/us-central1/api)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4000                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ localhost:5001 │ http://localhost:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2022-03-17T14:16:24.135Z] Functions emulator received unknown request at path /
+[debug] [2022-03-17T14:16:24.172Z] Functions emulator received unknown request at path /favicon.ico
+[debug] [2022-03-17T14:18:24.297Z] File /Users/cyp/projects/ssg-resume-page/functions/src/hooks/storage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/cyp/projects/ssg-resume-page/functions/src/hooks/storage.js changed, reloading triggers"}}
+[debug] [2022-03-17T14:18:25.302Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-03-17T14:18:26.616Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "npm run lint && tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "src/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-17T14:18:26.616Z] Building nodejs source
+[debug] [2022-03-17T14:18:26.616Z] Analyzing nodejs backend spec
+[debug] [2022-03-17T14:19:08.829Z] File /Users/cyp/projects/ssg-resume-page/functions/src/hooks/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/cyp/projects/ssg-resume-page/functions/src/hooks/index.js changed, reloading triggers"}}
+[debug] [2022-03-17T14:19:09.835Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-03-17T14:19:11.196Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "npm run lint && tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "src/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-17T14:19:11.196Z] Building nodejs source
+[debug] [2022-03-17T14:19:11.196Z] Analyzing nodejs backend spec
+[debug] [2022-03-17T14:19:22.543Z] File /Users/cyp/projects/ssg-resume-page/functions/src/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/cyp/projects/ssg-resume-page/functions/src/index.js changed, reloading triggers"}}
+[debug] [2022-03-17T14:19:23.547Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-03-17T14:19:24.886Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "npm run lint && tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "src/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-17T14:19:24.886Z] Building nodejs source
+[debug] [2022-03-17T14:19:24.886Z] Analyzing nodejs backend spec
+[debug] [2022-03-17T14:19:25.135Z] addStorageTrigger {"eventTrigger":{"eventType":"google.storage.object.finalize","resource":"projects/_/buckets/univdev-resume.appspot.com"}}
+[info] ✔  functions[us-central1-hooks-storage-storageLogs]: storage function initialized. {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mstorage\u001b[22m function initialized."}}
+[debug] [2022-03-17T14:21:51.070Z] File /Users/cyp/projects/ssg-resume-page/functions/src/hooks/storage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/cyp/projects/ssg-resume-page/functions/src/hooks/storage.js changed, reloading triggers"}}
+[debug] [2022-03-17T14:21:52.074Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-03-17T14:21:54.140Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "npm run lint && tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "src/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-17T14:21:54.140Z] Building nodejs source
+[debug] [2022-03-17T14:21:54.140Z] Analyzing nodejs backend spec
+[debug] [2022-03-17T14:21:54.403Z] addStorageTrigger {"eventTrigger":{"eventType":"google.storage.object.finalize","resource":"projects/_/buckets/univdev-resume.appspot.com"}}
+[info] ✔  functions[us-central1-hooks-storage-finalized]: storage function initialized. {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mstorage\u001b[22m function initialized."}}
+[debug] [2022-03-17T14:22:32.531Z] File /Users/cyp/projects/ssg-resume-page/functions/src/hooks/storage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/cyp/projects/ssg-resume-page/functions/src/hooks/storage.js changed, reloading triggers"}}
+[debug] [2022-03-17T14:22:33.534Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2022-03-17T14:22:34.836Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "npm run lint && tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "src/index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
+[debug] [2022-03-17T14:22:34.836Z] Building nodejs source
+[debug] [2022-03-17T14:22:34.836Z] Analyzing nodejs backend spec
+[debug] [2022-03-17T14:22:35.096Z] addStorageTrigger {"eventTrigger":{"eventType":"google.storage.object.delete","resource":"projects/_/buckets/univdev-resume.appspot.com"}}
+[info] ✔  functions[us-central1-hooks-storage-deleted]: storage function initialized. {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mstorage\u001b[22m function initialized."}}
