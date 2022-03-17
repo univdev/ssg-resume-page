@@ -1,12 +1,17 @@
 const functions = require('firebase-functions');
-const firestore = require('@google-cloud/firestore');
-const db = new firestore();
+const { admin } = require('../helpers/admin');
+
+const db = admin.firestore();
 
 exports.finalized = functions.storage.object().onFinalize(async (response) => {
-  console.log(response);
-  // await db.collection('storage').docs().set(response);
-  // return response;
+  await db.collection('storage').add(response);
+  return response;
 });
 exports.deleted = functions.storage.object().onDelete(async (response) => {
-  
+  const { id } = response;
+  const q = await db.collection('storage').where('id', '==', id);
+  const snapshots = await q.get()
+  snapshots.forEach((doc) => {
+    doc.ref.delete();
+  });
 });
