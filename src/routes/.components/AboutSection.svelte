@@ -37,7 +37,9 @@
 <template lang="pug">
   section.about-section
     .container
-      CountCard.count-card
+      CountCard.count-card(
+        commitCount="{commitCount}"
+        starCount="{starCount}")
       h2.title ABOUT ME
       .row
         .about-column.col-lg-3.col-md-6.col-sm-12
@@ -71,4 +73,7 @@
 <script lang="ts">
   import CountCard from './CountCard.svelte';
   import IconViewer from '../../components/IconViewer.svelte';
+
+  export let commitCount: Number;
+  export let starCount: Number;
 </script>

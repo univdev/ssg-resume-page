@@ -12,7 +12,9 @@
 <template lang="pug">
   MainSection(
     descriptions="{descriptionTexts}")
-  AboutSection
+  AboutSection(
+    commitCount="{commitCount}"
+    starCount="{starCount}")
   SkillsSection
   CareerSection
   ContactSection
@@ -22,9 +24,16 @@
   import axios from '../../plugins/axios';
 
   export async function preload() {
-    const { data } = await axios.get('/introductions');
-    const { result: descriptions } = data;
-    return { descriptions };
+    const [{ data: introductions }, { data: github }] = await Promise.all([
+      axios.get('/introductions'),
+      axios.get('/github'),
+    ]);
+    const { result: descriptions } = introductions;
+    return {
+      descriptions,
+      commitCount: github.commits,
+      starCount: github.stars,
+    };
   }
 </script>
 
@@ -39,6 +48,8 @@
 	import CountCard from './.components/CountCard.svelte';
 
   export let descriptions: Array<string>;
+  export let commitCount: Number;
+  export let starCount: Number;
 
   $: descriptionTexts = [...descriptions].map((description: any) => description.text);
 

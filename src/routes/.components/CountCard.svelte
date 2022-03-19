@@ -50,15 +50,18 @@
             .title Commits
             .content
               NumberViewer(
-                number="524")
+                number="{commitCount}")
       .count-card__item.col-lg-4.col-md-12
         .card-container
             .title Stars
             .content
               NumberViewer(
-                number="50")
+                number="{starCount}")
 </template>
 
 <script lang="ts">
   import NumberViewer from "../../components/NumberViewer.svelte";
+  
+  export let commitCount: Number;
+  export let starCount: Number;
 </script>

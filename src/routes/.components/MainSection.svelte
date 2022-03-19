@@ -36,20 +36,31 @@
   }
 </style>
 
-<template lang="pug">
-  section.main(style="background-image: url('{MainBackgroundImage}')")
-    .background-mask
-    .container
-      h1.title.
-        {'{{ '}박찬영{' }}'}#[br]
-        #[TypingAnimation(items="{descriptions}")]
-      p.description.
-        풍부한 프로젝트 리딩 경험을 겸비한 프로그래머 박찬영입니다.#[br]
+<template>
+  <section
+    class="main"
+    style="background-image: url('{MainBackgroundImage}')">
+    <div class="background-mask"></div>
+    <div class="container">
+      <h1 class="title">
+        {'{{ '}박찬영{' }}'}<br>
+        <TypingAnimation
+          items="{descriptions}"></TypingAnimation>
+        {#each descriptions as description}
+          <div
+            aria-label="{description}"
+            aria-hidden="true"></div>
+        {/each}
+      </h1>
+      <p class="description">
+        풍부한 프로젝트 리딩 경험을 겸비한 프로그래머 박찬영입니다<br>
         논리에 기반한 사고를 바탕으로 보다 깔끔한 코드와 알고리즘을 구현하려고 노력합니다.
+      </p>
+    </div>
+  </section>
 </template>
 
 <script lang="ts">
-  import { onMount } from 'svelte';
   import MainBackgroundImage from 'images/main-background.jpg';
   import TypingAnimation from '../../components/TypingAnimation.svelte';
   

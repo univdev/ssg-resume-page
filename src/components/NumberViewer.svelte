@@ -3,7 +3,7 @@
 </style>
 
 <template lang="pug">
-  .number-viewer {Math.ceil(displayNumber)}
+  .number-viewer {displayNumberFormat}
 </template>
 
 <script lang="ts">
@@ -23,6 +23,10 @@
   });
 
   $: startAnimation(number, isMounted);
+  $: displayNumberFormat =
+    typeof displayNumber === 'number'
+      ? Math.ceil(displayNumber).toLocaleString()
+      : Math.ceil(displayNumber);
 
   const startAnimation = async (destination: number, isClient: boolean) => {
     if (!isClient) return;

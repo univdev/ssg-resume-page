@@ -31,11 +31,11 @@
       </div>
       <div class="col-lg-4">
         <SkillsCard
-          title="Tools" />
+          title="Dev Tools" />
       </div>
       <div class="col-lg-4">
         <SkillsCard
-          title="Database" />
+          title="Communication Tools" />
       </div>
     </div>
   </div>
