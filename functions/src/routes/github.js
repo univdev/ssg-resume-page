@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const admin = require('../helpers/admin');
 
 router.get('/', (req, res) => {
   return res.json({
@@ -8,4 +7,4 @@ router.get('/', (req, res) => {
   });
 });
 
-exports.github = router;
+module.exports = router;
