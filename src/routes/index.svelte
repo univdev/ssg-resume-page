@@ -10,7 +10,8 @@
 </svelte:head>
 
 <template lang="pug">
-  MainSection(descriptions="{descriptions}")
+  MainSection(
+    descriptions="{descriptionTexts}")
   AboutSection
   SkillsSection
   CareerSection
@@ -18,9 +19,11 @@
 </template>
 
 <script lang="ts" context="module">
+  import axios from '../../plugins/axios';
+
   export async function preload() {
-    const response = await this.fetch('/descriptions');
-    const descriptions = await response.json();
+    const { data } = await axios.get('/introductions');
+    const { result: descriptions } = data;
     return { descriptions };
   }
 </script>
@@ -36,6 +39,8 @@
 	import CountCard from './.components/CountCard.svelte';
 
   export let descriptions: Array<string>;
+
+  $: descriptionTexts = [...descriptions].map((description) => description.text);
 
   let currentDocument = null;
 

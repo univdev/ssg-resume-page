@@ -10,6 +10,7 @@ import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
+import axios from './plugins/axios';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
