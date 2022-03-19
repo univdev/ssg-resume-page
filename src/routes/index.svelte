@@ -40,7 +40,7 @@
 
   export let descriptions: Array<string>;
 
-  $: descriptionTexts = [...descriptions].map((description) => description.text);
+  $: descriptionTexts = [...descriptions].map((description: any) => description.text);
 
   let currentDocument = null;
 
@@ -55,13 +55,13 @@
 
   onMount(async () => {
     await getApp();
-    const scrollEvent = window.addEventListener('scroll', () => {
+    const scrollEvent: any = window.addEventListener('scroll', () => {
       const { scrollY } = window;
       if (scrollY <= 80 && !currentDocument.isTop) Document.update((current) => ({ ...current, isTop: true }));
       if (scrollY > 80 && currentDocument.isTop) Document.update((current) => ({ ...current, isTop: false }));
     });
     return () => {
-      window.clearInterval(scrollEvent);
+      window.removeEventListener('scroll', scrollEvent);
       documentSubscriber();
     };
   });
