@@ -43,8 +43,10 @@
     .row
       .count-card__item.col-lg-4.col-md-12
         .card-container
-          .title Github Rank
-          .content A+
+          .title Repositories
+          .content
+            NumberViewer(
+              number="{repositoryCount}")
       .count-card__item.col-lg-4.col-md-12
         .card-container
             .title Commits
@@ -62,6 +64,7 @@
 <script lang="ts">
   import NumberViewer from "../../components/NumberViewer.svelte";
   
+  export let repositoryCount: Number;
   export let commitCount: Number;
   export let starCount: Number;
 </script>

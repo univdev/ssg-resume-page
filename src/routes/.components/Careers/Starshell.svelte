@@ -21,6 +21,7 @@
       margin-left: 48px;
       padding-left: 48px;
       border-left: 1px solid var(--bs-gray-300);
+      width: 480px;
       .title {
         color: var(--bs-dark);
         font-size: 32px;
@@ -61,29 +62,17 @@
   <div class="career-logo-wrap">
     <div
     class="career-logo-container"
-    style="background-color: {logoBackgroundColor}">
+    style="background-color: #000">
       <img
-        src="{image}"
-        alt="{name}"
+        src="{StarshellLogo}"
+        alt="스타셸 스튜디오"
         class="career-logo">
     </div>
   </div>
   <div class="career-content">
-    <div class="title">{name}</div>
-    {#if startDate && endDate}
-      <div class="date">{startDate} ~ {endDate}</div>
-    {/if}
-    <div class="role">{role}</div>
-    {#each histories as history}
-      <ul class="histories">
-        <li class="histories__item histories__item--title">
-          {@html history.title}
-        </li>
-        {#each history.content as content}
-          <li class="histories__item">{@html content}</li>
-        {/each}
-      </ul>
-    {/each}
+    <div class="title">스타셸 스튜디오</div>
+    <div class="date">2018-09-15 ~ 2021-07-16 (+ 프리랜서 4개월)</div>
+    <div class="role">엔지니어링 매니저 / 프론트엔드 엔지니어</div>
     <ul class="histories">
       <li class="histories__item histories__item--title">
         개발 및 프로젝트 총괄
@@ -117,17 +106,5 @@
 </div>
 
 <script lang="ts">
-  type History = {
-    title: String,
-    content: Array<string>,
-  };
-  type Histories = Array<History>;
-
-  export let image: string = '';
-  export let name: string = '';
-  export let role: string = '';
-  export let logoBackgroundColor: string = '#FFF';
-  export let startDate: string;
-  export let endDate: string;
-  export let histories: Histories = [];
+  import StarshellLogo from 'images/starshell-logo.png';
 </script>

@@ -38,6 +38,7 @@
   section.about-section
     .container
       CountCard.count-card(
+        repositoryCount="{repositoryCount}"
         commitCount="{commitCount}"
         starCount="{starCount}")
       h2.title ABOUT ME
@@ -74,6 +75,7 @@
   import CountCard from './CountCard.svelte';
   import IconViewer from '../../components/IconViewer.svelte';
 
+  export let repositoryCount: Number;
   export let commitCount: Number;
   export let starCount: Number;
 </script>

@@ -13,10 +13,12 @@
   MainSection(
     descriptions="{descriptionTexts}")
   AboutSection(
+    repositoryCount="{repositories}"
     commitCount="{commitCount}"
     starCount="{starCount}")
   SkillsSection
-  CareerSection
+  CareerSection(
+    careers="{careers}")
   ContactSection
 </template>
 
@@ -24,13 +26,20 @@
   import axios from '../../plugins/axios';
 
   export async function preload() {
-    const [{ data: introductions }, { data: github }] = await Promise.all([
+    const [
+      { data: introductions },
+      { data: github },
+      { data: careers },
+    ] = await Promise.all([
       axios.get('/introductions'),
       axios.get('/github'),
+      axios.get('/careers'),
     ]);
     const { result: descriptions } = introductions;
     return {
       descriptions,
+      careers: careers.result,
+      repositories: github.repositories,
       commitCount: github.commits,
       starCount: github.stars,
     };
@@ -44,10 +53,12 @@
   import AboutSection from './.components/AboutSection.svelte';
   import ContactSection from './.components/ContactSection.svelte';
   import SkillsSection from './.components/SkillsSection.svelte';
-  import CareerSection from './.components/CareerSection.svelte';
+  import CareerSection from './.components/Careers/Section.svelte';
 	import CountCard from './.components/CountCard.svelte';
 
+  export let careers: Array<any>;
   export let descriptions: Array<string>;
+  export let repositories: Number;
   export let commitCount: Number;
   export let starCount: Number;
 
