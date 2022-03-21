@@ -9,8 +9,9 @@
       padding: 0 16px 60px 16px;
     }
     :global(.count-card) {
-      transform: translateY(-50%);
       box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+      margin-top: calc(-162px / 2);
+      margin-bottom: 40px;
     }
     .title {
       font-family: 'Black Han Sans', 'Noto Sans KR';
