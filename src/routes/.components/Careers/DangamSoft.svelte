@@ -2,6 +2,9 @@
   .career-item {
     display: flex;
     align-items: flex-start;
+    @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+    }
     .career-logo-container {
       padding: 16px;
       border-radius: 6px;
@@ -11,6 +14,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        height: auto;
+      }
       .career-logo {
         width: 100%;
         height: 100%;
@@ -22,6 +29,14 @@
       padding-left: 48px;
       border-left: 1px solid var(--bs-gray-300);
       width: 480px;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        border-left: none;
+        margin-top: 24px;
+      }
       .title {
         color: var(--bs-dark);
         font-size: 32px;

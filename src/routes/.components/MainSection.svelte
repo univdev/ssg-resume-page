@@ -20,17 +20,27 @@
       padding-bottom: 200px;
       margin: auto;
       z-index: 1;
+      @media screen and (max-width: 768px) {
+        padding-top: calc(40px + 60px);
+      }
       .title {
         text-align: center;
         color: white;
         font-size: 64px;
         font-family: 'Black Han Sans', 'Noto Sans KR';
+        @media screen and (max-width: 768px) {
+          font-size: 48px;
+        }
       }
       .description {
         text-align: center;
         color: white;
         margin-top: 16px;
         font-size: 24px;
+        @media screen and (max-width: 768px) {
+          font-size: 18px;
+          margin-bottom: 24px;
+        }
       }
     }
   }
