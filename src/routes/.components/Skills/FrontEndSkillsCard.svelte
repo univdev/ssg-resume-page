@@ -16,7 +16,14 @@
 </AspectRatio>
 
 <script lang="ts">
-  import AspectRatio from '../../components/AspectRatio.svelte';
+  import AspectRatio from '../../../components/AspectRatio.svelte';
+  import Typescript from 'images/skills/front/typescript/typescript@2x.png';
+  import Vue from 'images/skills/front/vue/vue@2x.png';
+  import HTML5 from 'images/skills/front/html5/html5@2x.png';
+  import CSS3 from 'images/skills/front/css3/css3@2x.png';
+  import Javascript from 'images/skills/front/javascript/javascript@2x.png';
+  import Pug from 'images/skills/front/pug/pug@2x.png';
+  import Less from 'images/skills/front/less/less@2x.png';
   import Matter from 'matter-js';
   import { onMount } from 'svelte';
 
@@ -32,8 +39,8 @@
     } = Matter;
     engine = Engine.create();
     const target = window.document.querySelector('.front-end-skills');
-    const width = 300;
-    const height = 450;
+    const width = 800;
+    const height = 1200;
     const render = Render.create({
         element: target,
         engine: engine,
@@ -51,32 +58,28 @@
         fillStyle: '#FFF',
       },
     };
-    const vueOptions = {
-      render: {
-        sprite: {
-          texture: '/Vue.png',
-          xScale: .15,
-          yScale: .15,
-        },
-      },
-    };
-    const reactOptions = {
-      render: {
-        sprite: {
-          texture: '/react.png',
-          xScale: .1,
-          yScale: .1,
-        },
-      },
-    };
-    const vue = Bodies.circle(width / 2, 0, 30, vueOptions);
-    const react = Bodies.circle(width / 2, 0, 30, reactOptions);
+    const balls = [
+      Typescript, Vue, HTML5, Javascript,
+      CSS3, Pug, Less,
+    ].map((material) => {
+      return Bodies.circle(
+        width / 2, -100, 150,
+        {
+          render: {
+            sprite: {
+              texture: material,
+              xScale: .6,
+              yScale: .6,
+            },
+          },
+        });
+    });
     const leftWall = Bodies.rectangle(5, height / 2, 10, height, wallOptions);
     const rightWall = Bodies.rectangle(width, height / 2, 10, height, wallOptions);
     const ground = Bodies.rectangle(width / 2, height - 10, width, 20, wallOptions);
     const walls = [leftWall, rightWall, ground];
 
-    Composite.add(engine.world, [vue, react, ...walls]);
+    Composite.add(engine.world, [...balls, ...walls]);
 
     Render.run(render);
     const runner = Runner.create();

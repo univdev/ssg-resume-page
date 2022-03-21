@@ -52,7 +52,7 @@
   import MainSection from './.components/MainSection.svelte';
   import AboutSection from './.components/AboutSection.svelte';
   import ContactSection from './.components/ContactSection.svelte';
-  import SkillsSection from './.components/SkillsSection.svelte';
+  import SkillsSection from './.components/Skills/Section.svelte';
   import CareerSection from './.components/Careers/Section.svelte';
 	import CountCard from './.components/CountCard.svelte';
 

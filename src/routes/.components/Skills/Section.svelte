@@ -12,6 +12,14 @@
       text-align: center;
       font-family: "Black Han Sans";
     }
+    .skills {
+      .skills__item {
+        @media screen and (max-width: 768px) {
+          padding-top: 16px;
+          padding-bottom: 16px;
+        }
+      }
+    }
   }
 </style>
 
@@ -22,18 +30,18 @@
         <div class="title">Skills</div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-4">
+    <div class="row skills">
+      <div class="col-lg-4 skills__item">
         <SkillsCard
           title="Front End">
           <FrontEndSkillsCard />
         </SkillsCard>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-4 skills__item">
         <SkillsCard
           title="Dev Tools" />
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-4 skills__item">
         <SkillsCard
           title="Communication Tools" />
       </div>
@@ -43,5 +51,5 @@
 
 <script lang="ts">
   import FrontEndSkillsCard from './FrontEndSkillsCard.svelte';
-  import SkillsCard from '../../components/SkillsCard.svelte';
+  import SkillsCard from './SkillsCard.svelte';
 </script>
