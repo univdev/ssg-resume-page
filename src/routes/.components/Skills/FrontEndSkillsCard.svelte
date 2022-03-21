@@ -24,6 +24,7 @@
   import Javascript from 'images/skills/front/javascript/javascript@2x.png';
   import Pug from 'images/skills/front/pug/pug@2x.png';
   import Less from 'images/skills/front/less/less@2x.png';
+  import React from 'images/skills/front/react/react@2x.png';
   import Matter from 'matter-js';
   import { onMount } from 'svelte';
 
@@ -55,12 +56,12 @@
     const wallOptions = {
       isStatic: true,
       render: {
-        fillStyle: '#FFF',
+        fillStyle: '#FFFFFF',
       },
     };
     const balls = [
       Typescript, Vue, HTML5, Javascript,
-      CSS3, Pug, Less,
+      CSS3, Pug, Less, React,
     ].map((material) => {
       return Bodies.circle(
         width / 2, -100, 150,
@@ -74,8 +75,8 @@
           },
         });
     });
-    const leftWall = Bodies.rectangle(5, height / 2, 10, height, wallOptions);
-    const rightWall = Bodies.rectangle(width, height / 2, 10, height, wallOptions);
+    const leftWall = Bodies.rectangle(5, height / 2, 10, height * 3, wallOptions);
+    const rightWall = Bodies.rectangle(width, height / 2, 10, height * 3, wallOptions);
     const ground = Bodies.rectangle(width / 2, height - 10, width, 20, wallOptions);
     const walls = [leftWall, rightWall, ground];
 
