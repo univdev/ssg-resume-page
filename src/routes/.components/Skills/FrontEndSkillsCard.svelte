@@ -80,7 +80,17 @@
     const ground = Bodies.rectangle(width / 2, height - 10, width, 20, wallOptions);
     const walls = [leftWall, rightWall, ground];
 
-    Composite.add(engine.world, [...balls, ...walls]);
+    Composite.add(engine.world, [...walls]);
+
+    const BallRenderer = (balls: Array<any>, index: number) => {
+      if (balls.length <= index) return;
+      Composite.add(engine.world, [balls[index]]);
+      window.setTimeout(() => {
+        BallRenderer(balls, index + 1);
+      }, 600)
+    };
+
+    BallRenderer(balls, 0);
 
     Render.run(render);
     const runner = Runner.create();
