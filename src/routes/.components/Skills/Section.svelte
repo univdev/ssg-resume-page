@@ -39,11 +39,15 @@
       </div>
       <div class="col-lg-4 skills__item">
         <SkillsCard
-          title="Dev Tools" />
+          title="Dev Tools">
+          <DevToolsSkillsCard />
+        </SkillsCard>
       </div>
       <div class="col-lg-4 skills__item">
         <SkillsCard
-          title="Communication Tools" />
+          title="Communication Tools">
+          <CommunicationSkillsCard />
+        </SkillsCard>
       </div>
     </div>
   </div>
@@ -51,5 +55,7 @@
 
 <script lang="ts">
   import FrontEndSkillsCard from './FrontEndSkillsCard.svelte';
+  import CommunicationSkillsCard from './CommunicationSkillsCard.svelte';
+  import DevToolsSkillsCard from './DevToolsSkillsCard.svelte';
   import SkillsCard from './SkillsCard.svelte';
 </script>
