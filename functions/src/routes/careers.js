@@ -6,7 +6,6 @@ router.get('/', async (req, res) => {
   try {
     const snapshot = await admin.firestore().collection('careers').get();
     const items = [...snapshot.docs].map((doc) => doc.data());
-    console.log(items);
     return res.json({
       result: [...items],
     });
