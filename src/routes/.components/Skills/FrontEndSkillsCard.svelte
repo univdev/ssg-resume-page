@@ -1,4 +1,24 @@
 <style lang="less">
+  .skills {
+    padding: 16px;
+  }
+  .list {
+    margin-bottom: 16px;
+    list-style: none;
+    padding: 0;
+    .list__title {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 21px;
+      margin-bottom: 4px;
+    }
+    .list__item {
+      font-size: 14px;
+      line-height: 21px;
+      margin-bottom: 4px;
+      padding-left: 8px;
+    }
+  }
 </style>
 
 <AspectRatio
@@ -7,7 +27,28 @@
     <SkillsCard
       slot="front"
       skills="{skills}"></SkillsCard>
-    <div slot="back"></div>
+    <div slot="back">
+      <div class="skills">
+        <ul class="list">
+          <li class="list__title">Languages</li>
+          <li class="list__item">HTML5, CSS3, Javascript, Typescript</li>
+        </ul>
+        <ul class="list">
+          <li class="list__title">Web</li>
+          <li class="list__item">Vue, Nuxt</li>
+          <li class="list__item">React, React Redux</li>
+        </ul>
+        <ul class="list">
+          <li class="list__title">Mobile App</li>
+          <li class="list__item">React Native, React Native Navigation</li>
+        </ul>
+        <ul class="list">
+          <li class="list__title">Preprocessor</li>
+          <li class="list__item">Less</li>
+          <li class="list__item">Pug</li>
+        </ul>
+      </div>
+    </div>
   </Card>
 </AspectRatio>
 
