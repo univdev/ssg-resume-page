@@ -23,7 +23,7 @@
   }
 </style>
 
-<div class="skills-section">
+<div class="skills-section" id="skills">
   <div class="container">
     <div class="row title-row">
       <div class="col-lg-12">

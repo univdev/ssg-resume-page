@@ -50,7 +50,7 @@
   }
 </style>
 
-<section class="career-section">
+<section class="career-section" id="careers">
   <div class="container">
     <div class="row">
       <div class="col-md-12">

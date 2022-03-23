@@ -20,7 +20,9 @@
   CareerSection(
     careers="{careers}")
   ExperienceSection
+  AwardSection
   ContactSection
+  Footer
 </template>
 
 <script lang="ts" context="module">
@@ -50,6 +52,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import Document from '../stores/document';
+  import AwardSection from './.components/AwardSection.svelte';
   import MainSection from './.components/MainSection.svelte';
   import AboutSection from './.components/AboutSection.svelte';
   import ContactSection from './.components/ContactSection.svelte';
@@ -57,6 +60,7 @@
   import ExperienceSection from './.components/ExperienceSection.svelte';
   import CareerSection from './.components/Careers/Section.svelte';
 	import CountCard from './.components/CountCard.svelte';
+  import Footer from './.components/Footer.svelte';
 
   export let careers: Array<any>;
   export let descriptions: Array<string>;

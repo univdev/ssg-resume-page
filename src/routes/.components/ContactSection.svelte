@@ -1,6 +1,6 @@
 <style lang="less">
   .about-section {
-    background-color: #F2E088;
+    background-color: #EFEFEF;
     .container {
       max-width: 1280px;
       width: 100%;
@@ -48,7 +48,7 @@
 </style>
 
 <template lang="pug">
-  section.about-section
+  section.about-section#contact-me
     .container
       h2.title Contact Me
       .row

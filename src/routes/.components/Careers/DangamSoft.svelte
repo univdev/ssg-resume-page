@@ -79,7 +79,7 @@
     class="career-logo-container"
     style="background-color: #FFF">
       <img
-        src="{StarshellLogo}"
+        src="{DangamSoftLogo}"
         alt="단감소프트"
         class="career-logo">
     </div>
@@ -119,5 +119,5 @@
 </div>
 
 <script lang="ts">
-  import StarshellLogo from 'images/starshell-logo.png';
+  import DangamSoftLogo from 'images/dangamsoft-logo.png';
 </script>

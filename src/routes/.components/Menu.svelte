@@ -64,7 +64,9 @@
   <ul class="menu-list">
     {#each menu as item}
       <li class="menu-list__item">
-        <a href="{item.link}">{item.text}</a>
+        <a
+          href="{item.link}"
+          on:click="{() => visible = false}">{item.text}</a>
       </li>
     {/each}
   </ul>

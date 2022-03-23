@@ -13,6 +13,9 @@
 			.container {
 				color: var(--bs-white) !important;
 			}
+			a {
+				color: var(--bs-white) !important;
+			}
 		}
 		.container {
 			max-width: 1280px;
@@ -54,6 +57,10 @@
 					padding-left: 16px;
 					padding-right: 16px;
 					text-align: center;
+					a {
+						color: var(--bs-dark);
+						text-decoration: none;
+					}
 				}
 			}
 			.mobile-menu-button {
@@ -80,7 +87,9 @@
 				<nav class="navigation">
 					<ul class="menu">
 						{#each menu as item}
-							<li class="menu__item">{item.text}</li>
+							<li class="menu__item">
+								<a href="{item.link}">{item.text}</a>
+							</li>
 						{/each}
 					</ul>
 				</nav>

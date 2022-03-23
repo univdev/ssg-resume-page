@@ -50,10 +50,11 @@
         .title {
           font-size: 24px;
           font-weight: bold;
+          margin-bottom: 8px;
         }
         .date {
           color: var(--bs-gray-500);
-          margin-bottom: 8px;
+          margin-bottom: 16px;
         }
         .descriptions {
           list-style: none;
@@ -76,7 +77,7 @@
     {#each items as item}
       <li class="list__item">
         <div class="title">{item.title}</div>
-        <div class="date">{item.date}</div>
+        {#if item.date}<div class="date">{item.date}</div>{/if}
         <ul class="descriptions">
           {#each item.descriptions as description}
             <li class="description">{description}</li>
@@ -91,7 +92,7 @@
   export type History = {
     title: String,
     descriptions: Array<String>,
-    date: String,
+    date?: String,
   };
 </script>
 

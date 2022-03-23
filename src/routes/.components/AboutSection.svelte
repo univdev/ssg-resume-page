@@ -36,7 +36,7 @@
 </style>
 
 <template lang="pug">
-  section.about-section
+  section.about-section#about-me
     .container
       CountCard.count-card(
         repositoryCount="{repositoryCount}"
