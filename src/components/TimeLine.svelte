@@ -47,6 +47,10 @@
         border-radius: 8px;
         margin-top: 24px;
         color: var(--bs-dark);
+        .icon {
+          color: #F2D680;
+          margin-right: 4px;
+        }
         .title {
           font-size: 24px;
           font-weight: bold;
@@ -76,7 +80,10 @@
   <ul class="list">
     {#each items as item}
       <li class="list__item">
-        <div class="title">{item.title}</div>
+        <div class="title">
+          {#if item.icon}<i class="icon {item.icon}"></i>{/if}
+          {item.title}
+        </div>
         {#if item.date}<div class="date">{item.date}</div>{/if}
         <ul class="descriptions">
           {#each item.descriptions as description}
@@ -90,6 +97,7 @@
 
 <script lang="ts" context="module">
   export type History = {
+    icon?: String,
     title: String,
     descriptions: Array<String>,
     date?: String,

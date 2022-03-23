@@ -43,7 +43,8 @@
       year: 2020,
       items: [
         {
-          title: '🥇 정보처리산업기사',
+          icon: 'fa fa-certificate',
+          title: '정보처리산업기사',
           date: '한국산업인력공단',
           descriptions: [
             '컴퓨터에 관한 전문적인 지식과 기술을 갖춘 사람에게 지급하는 자격증입니다.',
@@ -68,6 +69,7 @@
       year: 2016,
       items: [
         {
+          icon: 'fa fa-certificate',
           title: '웹디자인 기능사',
           date: '산업통상자원부',
           descriptions: [
@@ -96,11 +98,11 @@
       year: 2015,
       items: [
         {
+          icon: 'fas fa-certificate',
           title: 'GTQ포토샵1급',
           date: '한국생산성본부',
           descriptions: [
-            '사진 및 각종 이미지 편집, 웹디자인 등 디자인에 있어 기본이 되는 역량을 지닌 사람에게 발급하는 자격증',
-            '국내 디자인 관련 자격증 중 가장 많은 응시자가 응시하는 자격증',
+            '사진 및 각종 이미지 편집, 웹디자인 등 디자인에 있어 기본이 되는 역량을 지닌 사람에게 발급하는 자격증입니다.',
           ],
         },
       ],

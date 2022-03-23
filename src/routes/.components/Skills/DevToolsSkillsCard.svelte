@@ -62,7 +62,9 @@
     '/images/skills/tools/firebase/firebase@2x.png',
     '/images/skills/tools/vscode/vscode@2x.png',
     '/images/skills/tools/zeplin/zeplin@2x.png',
+    '/images/skills/tools/xd/xd@2x.png',
     '/images/skills/tools/git/git@2x.png',
     '/images/skills/tools/github/github@2x.png',
+    '/images/skills/tools/gitlab/gitlab@2x.png',
   ];
 </script>
