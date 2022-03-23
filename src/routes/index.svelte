@@ -19,6 +19,7 @@
   SkillsSection
   CareerSection(
     careers="{careers}")
+  ExperienceSection
   ContactSection
 </template>
 
@@ -53,6 +54,7 @@
   import AboutSection from './.components/AboutSection.svelte';
   import ContactSection from './.components/ContactSection.svelte';
   import SkillsSection from './.components/Skills/Section.svelte';
+  import ExperienceSection from './.components/ExperienceSection.svelte';
   import CareerSection from './.components/Careers/Section.svelte';
 	import CountCard from './.components/CountCard.svelte';
 
