@@ -3,10 +3,13 @@
 
 <svelte:head>
   <title>프론트엔드 개발자, 박찬영입니다!</title>
-  <meta property="title" content="프론트엔드 개발자, 박찬영입니다!">
-  <meta property="description" content="경험이 풍부한, 배움을 멈출줄 모르는, 리딩 경험이 있는, 프론트엔드 개발자 박찬영입니다!">
-  <meta property="og:title" content="프론트엔드 개발자, 박찬영입니다!">
-  <meta property="og:description" content="경험이 풍부한, 배움을 멈출줄 모르는, 리딩 경험이 있는, 프론트엔드 개발자 박찬영입니다!">
+  <meta property="title" content="프론트엔드 개발자, 박찬영입니다!" />
+  <meta property="description" content="경험이 풍부한, 배움을 멈출줄 모르는, 리딩 경험이 있는, 프론트엔드 개발자 박찬영입니다!" />
+  <meta property="og:title" content="프론트엔드 개발자, 박찬영입니다!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="경험이 풍부한, 배움을 멈출줄 모르는, 리딩 경험이 있는, 프론트엔드 개발자 박찬영입니다!" />
+  <meta property="og:image" content="/avatar.png" />
+  <meta property="og:url" content="https://resume.univdev.page" />
 </svelte:head>
 
 <template lang="pug">
