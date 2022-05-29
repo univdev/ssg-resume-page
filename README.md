@@ -11,3 +11,6 @@ https://resume.univdev.page 를 통해서 접속하실 수 있어요!
 [Programmer]: ./README/programmer.gif
 [추천사 사이트]: https://best.univdev.page
 [Google Domains]: https://domains.google.com
+## 로드맵
+- 새로운 업체 생성
+- 포트폴리오 사이트 추가 (funapp.day)
